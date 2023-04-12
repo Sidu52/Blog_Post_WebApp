@@ -1,0 +1,11 @@
+<link rel="stylesheet" href="/css/singup.css">
+<div class="container">
+    <div class="form-container">
+        <h1>Enter New Password</h1>
+        <form action="/page/createnewpassword/<%= user.user %>" method="POST">
+            <input type="password" name="password" placeholder="Enter Passwoed" required />
+            <input type="password" name="conformpassword" placeholder="Enter-Reagin" required />
+            <button>Sign In</button>
+        </form>
+    </div>
+</div>

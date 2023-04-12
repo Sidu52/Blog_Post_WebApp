@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/profile.css">
+<h1>
+  Alston/ Profile Page
+</h1>
+<div id="home_container">
+  <section id="feed-posts">
+    <h4>Posts</h4>
+    <% if(locals.user) {%>
+      <form action="/post/createpost" id="new-post-form" method="POST">
+        <textarea name="content" cols="30" rows="3" placeholder="Type here..."></textarea>
+        <input type="submit" value="Post">
+      </form>
+      <%}%>
+
+
+        <div id="posts-list-container" class="post-container">
+          <ul>
+            <% for(post of posts) {%>
+              <%- include('post'); %>
+                <%} %>
+          </ul>
+        </div>
+  </section>
+
+  <section id="user-friends">
+    <h4>Friends</h4>
+    <% for(u of all_users){%>
+      <p>
+        <a href="/userprofile/<%= u.id %>">
+          <%= u.username %>
+        </a>
+      </p>
+      <% } %>
+  </section>
+</div>
+
+<script src="/js/home_post.js"></script>

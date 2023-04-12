@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700&display=swap");
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    height: 721px;
+
+}
+img{
+    margin-right: 0px;
+    width: 487px;
+}
+.text-box{
+    color: rgb(80, 80, 80);
+    margin-left: 6vw;
+    font-size: 1.5rem;
+    font-weight: 400;
+}

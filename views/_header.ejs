@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/header.css">
+<header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="profile">
+        
+      <% if(locals.user) {%>
+        <h4><%=user.username%></h4>
+        <form action="/page/singout" method="POST"><button>logout</button></form>
+        <% } else{ %>
+            <form action="/page/singin"><button>Sing-In</button></form>
+            <form action="/page/singup"><button>Sing-Up</button></form>
+        <% }%>
+    </div>
+  </header>

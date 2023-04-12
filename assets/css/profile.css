@@ -1,0 +1,19 @@
+body{
+  background-color: rgb(230, 236, 236);
+
+}
+#home_container{
+  display: flex;
+}
+#feed-posts{
+  width: 80%;
+ 
+}
+#user-friends{
+  width: 20%;
+  font-size: 1.7rem;
+}
+#user-friends a{
+  color: black;
+  cursor: pointer;
+}

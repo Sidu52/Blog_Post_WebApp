@@ -1,0 +1,33 @@
+<li>
+  <% if((locals.user) && (locals.user.id==comment.user.id)){%>
+    <small>
+      <a href="/post/destoyecomment/<%=comment.id%>">Delete</a>
+    </small>
+    <%}%>
+      <p>
+        <%=comment.content%>
+          <br>
+          <small>
+            <%= comment.user.username%>
+          </small>
+          <br>
+          <small>
+            <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment">
+              0 Likes
+            </a>
+
+          </small>
+          <!-- Display the likes of this comment, if the user is loggedin, then show the link to toggle like, else, just show th count -->
+          <!-- study about the data attribute -->
+          <small>
+            <% if(locals.user){ %>
+              <a class="toggle-like-button" data-likes="<%= comment.likes.length %>"
+                href="/likes/toggle/?id=<%= comment._id%>&type=Comment">
+                <%= comment.likes.length %>Likes
+              </a>
+              <% }else{ %>
+                <%= comment.likes.length %>Likes
+                  <% } %>
+          </small>
+
+</li>
